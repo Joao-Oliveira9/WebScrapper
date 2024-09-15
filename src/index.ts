@@ -1,4 +1,22 @@
-import puppeteer from "puppeteer";
+const puppeteer = require("puppeteer");
+const express = require("express");
+const cors = require("cors");
+
+const port = 8000;
+
+const app = express();
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(cors());
+
+app.post("/", (req, res) => {
+  console.log(req.body.data);
+  res.send("Deu certo");
+});
+
+app.listen(port, () => {
+  console.log("Servidor conectedo na porta 8000");
+});
 
 async function teste() {
   // Launch the browser and open a new blank page
@@ -22,4 +40,4 @@ async function teste() {
   await browser.close();
 }
 
-teste();
+/* teste(); */
