@@ -20,6 +20,57 @@ async function botTeste () {
     await browser.close();
   }
 
+
+  async function cookies(page){
+    try{
+        await page.waitForSelector("#cookies-politics-button.sc-dCFHLb.cUCRQG.sc-kdBSHD.sc-hYmls.cQSA-dW.eISrvA",{
+            timeout:50000_000,
+        }); 
+
+        await page.click("#cookies-politics-button.sc-dCFHLb.cUCRQG.sc-kdBSHD.sc-hYmls.cQSA-dW.eISrvA");
+        console.log("clicadinha");
+    }catch{console.log("erro");} 
+  }
+
+  async function inserirOrigemDestino(page){
+
+    try{
+      await page.waitForSelector(".Tabstyles__BottomDecoration-sc-oh5dk1-1.cRNsPM",{
+        timeout:50000_000,
+      }); 
+      
+      await page.click(".Tabstyles__BottomDecoration-sc-oh5dk1-1.cRNsPM");
+      console.log("puta");
+    }catch{console.log("putinha");}
+    
+    try{
+      await page.waitForSelector(".sc-dcCXRD.dxoMgK",{
+        timeout:50000_000,
+      }); 
+      await page.click(".sc-dcCXRD.dxoMgK");
+    }catch{} 
+
+    try{
+      await page.waitForSelector("#txtInputOrigin--text-field.sc-gdyeKB.gUMYPB.sc-bDpDS.coUuHR.sc-YysOf.hQQeCu",{
+        timeout:50000_000,
+      }); 
+      await page.type("#txtInputOrigin--text-field.sc-gdyeKB.gUMYPB.sc-bDpDS.coUuHR.sc-YysOf.hQQeCu","SAO");
+      await page.keyboard.press("ArrowDown");
+      await page.keyboard.press("Enter");
+      await page.click("#btnContinueCTA.sc-kUXCeW.sc-eRdibt.lpYpc.hPAZrU");
+    }catch{}
+    
+      await page.click(".sc-crvIOg.dgMThn");
+      await page.type("#txtInputDestination--text-field.sc-gdyeKB.gUMYPB.sc-bDpDS.coUuHR.sc-YysOf.hQQeCu","RIO");
+      await page.keyboard.press("ArrowDown");
+      await page.keyboard.press("Enter");
+      await page.click("#btnContinueCTA.sc-kUXCeW.sc-eRdibt.lpYpc.hPAZrU");
+  }
+
+  async function inserirIdaVolta(page){
+
+  }
+
   async function teste2() {
     // Launch the browser and open a new blank page
     const browser = await puppeteer.launch({ headless: false,  isMobile:false});
@@ -29,53 +80,19 @@ async function botTeste () {
       "https://www.latamairlines.com/"
     );
 
+    await cookies(page);
     try{
-        await page.waitForSelector("#cookies-politics-button.sc-dCFHLb.cUCRQG.sc-kdBSHD.sc-hYmls.cQSA-dW.eISrvA",{
-            timeout:50000_000,
-        }); 
-
-        await page.click("#cookies-politics-button.sc-dCFHLb.cUCRQG.sc-kdBSHD.sc-hYmls.cQSA-dW.eISrvA");
-        console.log("clicadinha");
-    }catch{console.log("erro");} 
-
-    try{
-
-      await page.waitForSelector("#lblInputOrigin.sc-jypuc.jomLGV",{
-        timeout:50000_000,
-    }); 
+      await page.waitForSelector("",{
+        timeout:1000,
+      });
+    }catch{}
+    await inserirOrigemDestino(page);
     
-      await page.type("#lblInputOrigin.sc-jeypuc.jomLGV","SAO");
-      await page.keyboard.press("ArrowDown");
-      await page.keyboard.press("Enter");
+    await inserirIdaVolta(page);
 
-      await page.type("#lblInputDestination.sc-jeypuc.jomLGV","RIO");
-      await page.keyboard.press("ArrowDown");
-      await page.keyboard.press("Enter");
+    await page.screenshot({path: 'buddy-screenshot.png'});
 
-      await page.screenshot({path: 'buddy-screenshot.png'});
-
-    }catch{console.log("erro");}
-
-
-    try{
-        await page.waitForSelector("#header__profile__lnk-sign-in.sc-satoz.cQkIIy", {
-        timeout: 5_000,
-        });
-
-        const title = await page.evaluate(() => {
-            return (
-              document.querySelector(
-                  "#header__profile__lnk-sign-in.sc-satoz.cQkIIy"
-              ) as HTMLElement
-            ).innerText;
-          });
-
-        console.log(title);
-    }catch{
-        console.log("erro")
-    }finally{
-      await browser.close();
-    }
+    await browser.close();
 
   }
 

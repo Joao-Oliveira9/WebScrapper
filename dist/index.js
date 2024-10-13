@@ -15,11 +15,7 @@ async function botTeste() {
     console.log('The title of this blog post is "%s".', titulo);
     await browser.close();
 }
-async function teste2() {
-    // Launch the browser and open a new blank page
-    const browser = await puppeteer.launch({ headless: false, isMobile: false });
-    const page = await browser.newPage();
-    await page.goto("https://www.latamairlines.com/");
+async function cookies(page) {
     try {
         await page.waitForSelector("#cookies-politics-button.sc-dCFHLb.cUCRQG.sc-kdBSHD.sc-hYmls.cQSA-dW.eISrvA", {
             timeout: 50000_000,
@@ -30,36 +26,59 @@ async function teste2() {
     catch {
         console.log("erro");
     }
+}
+async function inserirOrigemDestino(page) {
     try {
-        await page.waitForSelector("#lblInputOrigin.sc-jypuc.jomLGV", {
+        await page.waitForSelector(".Tabstyles__BottomDecoration-sc-oh5dk1-1.cRNsPM", {
             timeout: 50000_000,
         });
-        await page.type("#lblInputOrigin.sc-jeypuc.jomLGV", "SAO");
-        await page.keyboard.press("ArrowDown");
-        await page.keyboard.press("Enter");
-        await page.type("#lblInputDestination.sc-jeypuc.jomLGV", "RIO");
-        await page.keyboard.press("ArrowDown");
-        await page.keyboard.press("Enter");
-        await page.screenshot({ path: 'buddy-screenshot.png' });
+        await page.click(".Tabstyles__BottomDecoration-sc-oh5dk1-1.cRNsPM");
+        console.log("puta");
     }
     catch {
-        console.log("erro");
+        console.log("putinha");
     }
     try {
-        await page.waitForSelector("#header__profile__lnk-sign-in.sc-satoz.cQkIIy", {
-            timeout: 5_000,
+        await page.waitForSelector(".sc-dcCXRD.dxoMgK", {
+            timeout: 50000_000,
         });
-        const title = await page.evaluate(() => {
-            return document.querySelector("#header__profile__lnk-sign-in.sc-satoz.cQkIIy").innerText;
+        await page.click(".sc-dcCXRD.dxoMgK");
+    }
+    catch { }
+    try {
+        await page.waitForSelector("#txtInputOrigin--text-field.sc-gdyeKB.gUMYPB.sc-bDpDS.coUuHR.sc-YysOf.hQQeCu", {
+            timeout: 50000_000,
         });
-        console.log(title);
+        await page.type("#txtInputOrigin--text-field.sc-gdyeKB.gUMYPB.sc-bDpDS.coUuHR.sc-YysOf.hQQeCu", "SAO");
+        await page.keyboard.press("ArrowDown");
+        await page.keyboard.press("Enter");
+        await page.click("#btnContinueCTA.sc-kUXCeW.sc-eRdibt.lpYpc.hPAZrU");
     }
-    catch {
-        console.log("erro");
+    catch { }
+    await page.click(".sc-crvIOg.dgMThn");
+    await page.type("#txtInputDestination--text-field.sc-gdyeKB.gUMYPB.sc-bDpDS.coUuHR.sc-YysOf.hQQeCu", "RIO");
+    await page.keyboard.press("ArrowDown");
+    await page.keyboard.press("Enter");
+    await page.click("#btnContinueCTA.sc-kUXCeW.sc-eRdibt.lpYpc.hPAZrU");
+}
+async function inserirIdaVolta(page) {
+}
+async function teste2() {
+    // Launch the browser and open a new blank page
+    const browser = await puppeteer.launch({ headless: false, isMobile: false });
+    const page = await browser.newPage();
+    await page.goto("https://www.latamairlines.com/");
+    await cookies(page);
+    try {
+        await page.waitForSelector("", {
+            timeout: 1000,
+        });
     }
-    finally {
-        await browser.close();
-    }
+    catch { }
+    await inserirOrigemDestino(page);
+    await inserirIdaVolta(page);
+    await page.screenshot({ path: 'buddy-screenshot.png' });
+    await browser.close();
 }
 teste2();
 //# sourceMappingURL=index.js.map
