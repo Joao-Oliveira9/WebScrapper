@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de Passagens Aéreas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-plane-departure"></i>G.D.L. Aviações</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero">
+            <div class="container">
+                <h2>Encontre as melhores ofertas de voos para qualquer destino</h2>
+                <form class="search-box" action="segundo.html">
+                    <div class="input-group">
+                        <label for="origem"><i class="fas fa-map-marker-alt"></i> Origem</label>
+                        <input type="text" id="origem" name="origem" placeholder="Cidade de origem">
+                    </div>
+                    <div class="input-group">
+                        <label for="destino"><i class="fas fa-map-pin"></i> Destino</label>
+                        <input type="text" id="destino" name="destino" placeholder="Cidade de destino">
+                    </div>
+                    <div class="input-group">
+                        <label for="data-ida"><i class="fas fa-calendar-alt"></i> Data de Ida</label>
+                        <input type="date" id="data-ida" name="data-ida">
+                    </div>
+                    <div class="input-group">
+                        <label for="data-volta"><i class="fas fa-calendar-check"></i> Data de Volta</label>
+                        <input type="date" id="data-volta" name="data-volta">
+                    </div>
+                    <div class="input-group">
+                        <label for="passageiros"><i class="fas fa-users"></i> Passageiros</label>
+                        <select id="passageiros" name="passageiros">
+                            <option value="1">1 Passageiro</option>
+                            <option value="2">2 Passageiros</option>
+                            <option value="3">3 Passageiros</option>
+                            <option value="4">4 Passageiros</option>
+                        </select>
+                    </div>
+                    <button type="submit"><i class="fas fa-search"></i> Buscar</button>
+                </form>
+            </div>
+        </div>
+
+        <section class="offers">
+            <div class="container">
+                <h3>Ofertas Populares</h3>
+                <div class="offer-cards">
+                    <div class="offer-card">
+                        <h4>São Paulo - Curitiba</h4>
+                        <p>A partir de <strong>R$ 760</strong></p>
+                        <button>Ver detalhes</button>
+                    </div>
+                    <div class="offer-card">
+                        <h4>Rio de Janeiro - Maranhão</h4>
+                        <p>A partir de <strong>R$ 700</strong></p>
+                        <button>Ver detalhes</button>
+                    </div>
+                    <div class="offer-card">
+                        <h4>Brasília - Acre</h4>
+                        <p>A partir de <strong>R$ 100</strong></p>
+                        <button>Ver detalhes</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 G.D.L. Aviações - Todos os direitos reservados.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
