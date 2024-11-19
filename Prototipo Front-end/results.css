@@ -1,0 +1,98 @@
+/* Reset de estilo */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/image.png);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Estilo do cabeçalho */
+header {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+#imagem { 
+  width: 420.625px;
+  height: 122.375px;
+  background-color: rgba(211, 211, 211, 0.2); /* Fundo semi-transparente */
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+  border: 1px solid #ccc;
+}
+
+#imagem img {
+  width: 160.625px;
+  height: 100.375px;
+  border-radius: 5px; /* Arredondamento leve na imagem */
+}
+
+/* Estilo da seção de resultados */
+#resultados {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+#resultado {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#resultado p {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+#companhiatam,
+#companhiagol {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #444;
+}
+
+#precotam,
+#precogol {
+  font-size: 1rem;
+  color: #888;
+}
+
+#resultado a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#resultado a:hover {
+  color: #004080;
+  text-decoration: underline;
+}
