@@ -1,58 +1,114 @@
+/* Reset de estilo */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(assets/image.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/image.png);
   background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
 }
 
+/* Estilo do contêiner da imagem do logotipo */
 #imagem {
-  background-color: #d3d3d3;
+  background-color: rgba(211, 211, 211, 0.2); /* Fundo semi-transparente */
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+  border: 1px solid #ccc;
 }
 
+/* Estilo do fieldset */
 fieldset {
-  /* background-color: #0a4150;
-  width: 484.05px;
-  height: 466.85px; */
-  width: 484.054px;
-  height: 466.854px;
-  flex-shrink: 0;
-  /* background-color: #0a4155; */
-  background-blend-mode: overlay;
-}
-
-.entrada {
-  width: 406.655px;
-  height: 51.6px;
-  flex-shrink: 0;
-
-  border-radius: 11px;
-  border: 1px solid #000;
-  background: #d0c8c8;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-
-.formulario {
+  width: 484px;
+  height: 467px;
+  background-color: rgba(211, 211, 211, 0.2); /* Fundo escuro semi-transparente */
+  border-radius: 10px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  color: #fff; /* Texto branco */
 }
 
+#aeroportos {
+  width: 300px; /* Define a largura */
+  max-height: 150px; /* Limita a altura visível */
+  overflow-y: auto; /* Adiciona a barra de rolagem vertical */
+}
+
+select {
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+/* Remove a barra de rolagem horizontal */
+select option {
+  white-space: nowrap;
+}
+
+/* Estilo dos campos de entrada */
+.entrada {
+  width: 437px;
+  height: 37px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Estilo do contêiner do formulário */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Estilo do botão */
 .botao {
-  width: 310.827px;
-  height: 56.514px;
-  flex-shrink: 0;
-  border-radius: 40px;
-  background: #1375f5;
+  width: 311px;
+  height: 57px;
+  border-radius: 6px;
+  background: rgba(10, 65, 85, 0.9); /* Cinza */
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 2rem;
+  border: 1px solid #ccc;
 }
 
+.botao:hover {
+  background-color: #888; /* Efeito de hover mais escuro */
+}
+
+/* Estilo do formulário */
 form {
   display: flex;
-  justify-content: center;
-
+  flex-direction: column;
   align-items: center;
+  gap: 15px;
 }

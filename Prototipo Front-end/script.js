@@ -78,9 +78,11 @@ async function sendFormsData(origem, dataSaida, dataOrigem, destino) {
       if (response.ok) {
         const data = await response.json();
         console.log("Dados recebidos do servidor:", data);
-        const {url , valor} = data
-        localStorage.setItem('url', url);
-        localStorage.setItem('valor', valor);
+        const {url_tam , valor_tam,url_gol,valor_gol} = data
+        localStorage.setItem('url_tam', url_tam);
+        localStorage.setItem('valor_tam', valor_tam);
+        localStorage.setItem('url_gol', url_gol);
+        localStorage.setItem('valor_gol', valor_gol);
       } else {
         console.error(
           "Erro no servidor:",

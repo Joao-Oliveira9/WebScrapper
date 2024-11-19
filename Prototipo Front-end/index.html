@@ -21,41 +21,92 @@
     <form action="">
       <fieldset class="formulario">
         <p>
-          <input
-            type="text"
-            name=""
-            id="origem"
-            class="entrada"
-            placeholder="origem"
-          />
+          <label for="aeroportos">Escolha um aeroporto:</label>
+    <select id="origem" name="aeroporto">
+        <option value="GRU">GRU - São Paulo (Guarulhos)</option>
+        <option value="GIG">GIG - Rio de Janeiro (Galeão)</option>
+        <option value="BSB">BSB - Brasília (Presidente Juscelino Kubitschek)</option>
+        <option value="CGH">CGH - São Paulo (Congonhas)</option>
+        <option value="SDU">SDU - Rio de Janeiro (Santos Dumont)</option>
+        <option value="CNF">CNF - Belo Horizonte (Confins)</option>
+        <option value="SSA">SSA - Salvador (Deputado Luís Eduardo Magalhães)</option>
+        <option value="POA">POA - Porto Alegre (Salgado Filho)</option>
+        <option value="REC">REC - Recife (Guararapes/Gilberto Freyre)</option>
+        <option value="FOR">FOR - Fortaleza (Pinto Martins)</option>
+        <option value="CWB">CWB - Curitiba (Afonso Pena)</option>
+        <option value="VCP">VCP - Campinas (Viracopos)</option>
+        <option value="MAO">MAO - Manaus (Eduardo Gomes)</option>
+        <option value="BEL">BEL - Belém (Val de Cans)</option>
+        <option value="NAT">NAT - Natal (Governador Aluízio Alves)</option>
+        <option value="MCZ">MCZ - Maceió (Zumbi dos Palmares)</option>
+        <option value="CGB">CGB - Cuiabá (Marechal Rondon)</option>
+        <option value="IGU">IGU - Foz do Iguaçu (Cataratas)</option>
+        <option value="FLN">FLN - Florianópolis (Hercílio Luz)</option>
+        <option value="JPA">JPA - João Pessoa (Presidente Castro Pinto)</option>
+        <option value="SLZ">SLZ - São Luís (Marechal Cunha Machado)</option>
+        <option value="VIX">VIX - Vitória (Eurico de Aguiar Salles)</option>
+        <option value="AJU">AJU - Aracaju (Santa Maria)</option>
+        <option value="THE">THE - Teresina (Senador Petrônio Portella)</option>
+        <option value="PMW">PMW - Palmas (Brigadeiro Lysias Rodrigues)</option>
+        <option value="BVB">BVB - Boa Vista (Atlas Brasil Cantanhede)</option>
+        <option value="RBR">RBR - Rio Branco (Plácido de Castro)</option>
+        <option value="PVH">PVH - Porto Velho (Governador Jorge Teixeira)</option>
+        <option value="JDO">JDO - Juazeiro do Norte (Orlando Bezerra de Menezes)</option>
+    </select>
         </p>
 
         <p>
-          <input
-            type="text"
-            id="destino"
-            class="entrada"
-            placeholder="destino"
-          />
+          <label for="aeroportos">Escolha um aeroporto:</label>
+    <select id="destino" name="aeroporto">
+        <option value="GRU">GRU - São Paulo (Guarulhos)</option>
+        <option value="GIG">GIG - Rio de Janeiro (Galeão)</option>
+        <option value="BSB">BSB - Brasília (Presidente Juscelino Kubitschek)</option>
+        <option value="CGH">CGH - São Paulo (Congonhas)</option>
+        <option value="SDU">SDU - Rio de Janeiro (Santos Dumont)</option>
+        <option value="CNF">CNF - Belo Horizonte (Confins)</option>
+        <option value="SSA">SSA - Salvador (Deputado Luís Eduardo Magalhães)</option>
+        <option value="POA">POA - Porto Alegre (Salgado Filho)</option>
+        <option value="REC">REC - Recife (Guararapes/Gilberto Freyre)</option>
+        <option value="FOR">FOR - Fortaleza (Pinto Martins)</option>
+        <option value="CWB">CWB - Curitiba (Afonso Pena)</option>
+        <option value="VCP">VCP - Campinas (Viracopos)</option>
+        <option value="MAO">MAO - Manaus (Eduardo Gomes)</option>
+        <option value="BEL">BEL - Belém (Val de Cans)</option>
+        <option value="NAT">NAT - Natal (Governador Aluízio Alves)</option>
+        <option value="MCZ">MCZ - Maceió (Zumbi dos Palmares)</option>
+        <option value="CGB">CGB - Cuiabá (Marechal Rondon)</option>
+        <option value="IGU">IGU - Foz do Iguaçu (Cataratas)</option>
+        <option value="FLN">FLN - Florianópolis (Hercílio Luz)</option>
+        <option value="JPA">JPA - João Pessoa (Presidente Castro Pinto)</option>
+        <option value="SLZ">SLZ - São Luís (Marechal Cunha Machado)</option>
+        <option value="VIX">VIX - Vitória (Eurico de Aguiar Salles)</option>
+        <option value="AJU">AJU - Aracaju (Santa Maria)</option>
+        <option value="THE">THE - Teresina (Senador Petrônio Portella)</option>
+        <option value="PMW">PMW - Palmas (Brigadeiro Lysias Rodrigues)</option>
+        <option value="BVB">BVB - Boa Vista (Atlas Brasil Cantanhede)</option>
+        <option value="RBR">RBR - Rio Branco (Plácido de Castro)</option>
+        <option value="PVH">PVH - Porto Velho (Governador Jorge Teixeira)</option>
+        <option value="JDO">JDO - Juazeiro do Norte (Orlando Bezerra de Menezes)</option>
+    </select>
         </p>
 
-        <p>
+        <p><label>Data de Ida</label>
           <input
             type="text"
             id="data/inicio"
             class="entrada"
-            placeholder="data/inicio"
+            placeholder="YYYY-MM-DD"
           />
         </p>
-        <p>
+        <p><label>Data de Volta</label>
           <input
             type="text"
             id="data/fim"
             class="entrada"
-            placeholder="data/fim"
+            placeholder="YYYY-MM-DD"
           />
         </p>
-        <p>
+        <p><label></label>
           <button type="button" class="botao">CONFIRMAR</button>
         </p>
       </fieldset>
