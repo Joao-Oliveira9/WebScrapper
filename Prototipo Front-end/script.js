@@ -11,6 +11,10 @@ window.addEventListener("beforeunload", (event) => {
   event.returnValue = "";
 });
 
+window.addEventListener("submit", (e) => {
+  e.preventDefault(); 
+});
+
 botao.addEventListener("click", async (e) => {
   e.preventDefault();
   console.log("click aqui");
@@ -26,7 +30,8 @@ botao.addEventListener("click", async (e) => {
       dataOrigem.value,
       destino.value
     );
-    // window.location.href = "index2.html";
+    console.log("oie")
+    window.location.href = "index2.html";
   }
   return false;
 });
@@ -48,9 +53,9 @@ botao.addEventListener("click", async (e) => {
 async function sendFormsData(origem, dataSaida, dataOrigem, destino) {
   try {
     console.log("Dados enviados:", { origem, dataSaida, dataOrigem, destino });
-
+    let response = ""
     try {
-      const response = await fetch("http://127.0.0.1:8000/", {
+      response = await fetch("http://127.0.0.1:8000/", {
         timeout: 60000,
         method: "POST",
         headers: {
@@ -73,6 +78,9 @@ async function sendFormsData(origem, dataSaida, dataOrigem, destino) {
       if (response.ok) {
         const data = await response.json();
         console.log("Dados recebidos do servidor:", data);
+        const {url , valor} = data
+        localStorage.setItem('url', url);
+        localStorage.setItem('valor', valor);
       } else {
         console.error(
           "Erro no servidor:",
